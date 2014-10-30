@@ -32,12 +32,11 @@ module.exports = function(grunt, set, data) {
     data: data,
     loadGruntTasks: {
       pattern: ['grunt-*', '!grunt-set'],
-      config: require(configPath+'/package.json'),
-      scope: 'peerDependencies'
     },
     preMerge: function(config, data) {
       delete config.package;
       delete config.defaults;
     }
   });
+  grunt.loadNpmTasks('grunt-set-'+set);
 };
