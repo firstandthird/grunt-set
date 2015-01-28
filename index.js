@@ -8,6 +8,7 @@ module.exports = function(grunt, set, data) {
 
   var configPath = path.join(cwd, 'node_modules', 'grunt-set-'+set);
   var overridePath = path.join(cwd, 'grunt');
+  var bowerPath = path.join(cwd, 'bower.json');
 
   if (!fs.existsSync(configPath)) {
     throw new Error(set + ' not installed');
@@ -25,6 +26,9 @@ module.exports = function(grunt, set, data) {
 
   data = aug({}, defaults, data);
 
+  if (fs.existsSync(bowerPath)) {
+      data.bower = require(bowerPath);
+  }
 
   require('load-grunt-config')(grunt, {
     configPath: configPath,
