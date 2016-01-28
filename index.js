@@ -27,7 +27,7 @@ module.exports = function(grunt, set, data) {
   data = aug({}, defaults, data);
 
   if (fs.existsSync(bowerPath)) {
-      data.bower = require(bowerPath);
+    data.bowerpkg = require(bowerPath);
   }
 
   require('load-grunt-config')(grunt, {
@@ -40,6 +40,7 @@ module.exports = function(grunt, set, data) {
     preMerge: function(config, data) {
       delete config.package;
       delete config.defaults;
+      delete config.bowerpkg;
     }
   });
   grunt.loadNpmTasks('grunt-set-'+set);
