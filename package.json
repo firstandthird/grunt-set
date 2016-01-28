@@ -1,6 +1,6 @@
 {
   "name": "grunt-set",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Lib to load a set of grunt configs",
   "main": "index.js",
   "dependencies": {
