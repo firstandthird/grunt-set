@@ -4,8 +4,8 @@
   "description": "Lib to load a set of grunt configs",
   "main": "index.js",
   "dependencies": {
-    "aug": "^0.1.0",
-    "load-grunt-config": "^0.16.0"
+    "aug": "^1.0.1",
+    "load-grunt-config": "^0.19.2"
   },
   "repository": {
     "type": "git",
